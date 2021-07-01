@@ -1,21 +1,64 @@
 import React from 'react';
+import styled from '@emotion/styled';
+
+//=================== STYLED COMPONENTS ========================================
+const Campo = styled.div`
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: center
+`;
+
+const Label = styled.label`
+    flex: 0 0 100px;
+`;
+
+const Select = styled.select`
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e1e1e1;
+    --webkit-appearance: none;
+`;
+
+const InputRadio = styled.input`
+    margin: 0 1rem;
+`;
+
+const Boton = styled.button`
+    background-color: #00838F;
+    font-size: 16px;
+    width: 100%;
+    padding: 1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    transition: background-color .3s ease;
+    margin-top: 2rem;
+
+    &:hover{
+        background-color: #26C6D4;
+        cursor: pointer;
+    }
+`;
+//================= STYLED COMPONENTS =======================================
 
 const Formulario = () => {
     return (
         <form>
-            <div>
-                <label>Marca </label>
-                <select>
+            <Campo>
+                <Label>Marca </Label>
+                <Select>
                     <option value="">-- Selecione --</option>
                     <option value="americano">Ámericano</option>
                     <option value="europeo">Europeo</option>
                     <option value="asiatico">Asiatico</option>
-                </select>
-            </div>
+                </Select>
+            </Campo>
 
-            <div>
-                <label>Año </label>
-                <select>
+            <Campo>
+                <Label>Año </Label>
+                <Select>
                     <option value="">-- Seleccione --</option>
                     <option value="2021">2021</option>
                     <option value="2020">2020</option>
@@ -27,25 +70,25 @@ const Formulario = () => {
                     <option value="2014">2014</option>
                     <option value="2013">2013</option>
                     <option value="2012">2012</option>
-                </select>
-            </div>
+                </Select>
+            </Campo>
 
-            <div>
-                <label>Plan a selecionar</label>
-                <input
+            <Campo>
+                <Label>Plan a selecionar</Label>
+                <InputRadio
                     type="radio"
                     name="plan"
                     value="basico"
                 /> Basico
 
-                <input
+                <InputRadio
                     type="radio"
                     name="plan"
                     value="completo"
                 /> Completo
-            </div>
+            </Campo>
 
-            <button type="button">Cotizar</button>
+            <Boton type="button">Cotizar</Boton>
         </form>
      );
 }
