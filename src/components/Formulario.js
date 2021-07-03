@@ -53,7 +53,7 @@ const Error = styled.div`
 `;
 //================= STYLED COMPONENTS =======================================
 
-const Formulario = () => {
+const Formulario = ({guardarResumen}) => {
 
     //Creando el State
     const [datos, guardarDatos] = useState({
@@ -106,6 +106,10 @@ const Formulario = () => {
         console.log(resultado);
 
         //Total
+        guardarResumen({
+            cotizacion: resultado,
+            datos
+        })
     }
     return (
         <form
