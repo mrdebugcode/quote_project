@@ -56,7 +56,7 @@ const Error = styled.div`
 
 const Formulario = ({guardarResumen, guardarCargando}) => {
 
-    //Creando el State
+    Creando el State
     const [datos, guardarDatos] = useState({
         marca: '',
         year: '',
